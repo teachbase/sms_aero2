@@ -1,6 +1,6 @@
 RSpec.describe SmsAero2::Request do
   describe "#call" do
-    subject(:send_request) { described_class.new(client).call(url, params) }
+    subject(:send_request) { described_class.new(client).call(url, **params) }
     let(:client) { double(:client, logger: nil, login: 'foo', token: 'foo') }
     let(:url) { 'https://somehost.org' }
     let(:params) { {id: 123} }
